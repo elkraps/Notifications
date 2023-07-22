@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct NotificationsApp: App {
@@ -15,3 +16,5 @@ struct NotificationsApp: App {
         }
     }
 }
+
+

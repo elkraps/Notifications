@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC3C0EE52A6A54D000E19BC4 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CC3C0EE42A6A54D000E19BC4 /* FirebaseMessaging */; };
 		CC85929B2A690061007B8B4A /* NotificationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85929A2A690061007B8B4A /* NotificationsApp.swift */; };
 		CC85929D2A690061007B8B4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC85929C2A690061007B8B4A /* ContentView.swift */; };
 		CC85929F2A690062007B8B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC85929E2A690062007B8B4A /* Assets.xcassets */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC3C0EE12A6A536000E19BC4 /* Notifications.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notifications.entitlements; sourceTree = "<group>"; };
+		CC3C0EE22A6A537100E19BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CC8592972A690061007B8B4A /* Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC85929A2A690061007B8B4A /* NotificationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApp.swift; sourceTree = "<group>"; };
 		CC85929C2A690061007B8B4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC3C0EE52A6A54D000E19BC4 /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,8 @@
 		CC8592992A690061007B8B4A /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C0EE22A6A537100E19BC4 /* Info.plist */,
+				CC3C0EE12A6A536000E19BC4 /* Notifications.entitlements */,
 				CC8592A92A6900F9007B8B4A /* Handlers */,
 				CC8592A82A6900EF007B8B4A /* Views */,
 				CC85929A2A690061007B8B4A /* NotificationsApp.swift */,
@@ -102,6 +108,9 @@
 			dependencies = (
 			);
 			name = Notifications;
+			packageProductDependencies = (
+				CC3C0EE42A6A54D000E19BC4 /* FirebaseMessaging */,
+			);
 			productName = Notifications;
 			productReference = CC8592972A690061007B8B4A /* Notifications.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +139,9 @@
 				Base,
 			);
 			mainGroup = CC85928E2A690061007B8B4A;
+			packageReferences = (
+				CC3C0EE32A6A54D000E19BC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CC8592982A690061007B8B4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -284,11 +296,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Notifications/Notifications.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Notifications/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notifications/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -312,11 +326,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Notifications/Notifications.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Notifications/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notifications/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -357,6 +373,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC3C0EE32A6A54D000E19BC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC3C0EE42A6A54D000E19BC4 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC3C0EE32A6A54D000E19BC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC85928F2A690061007B8B4A /* Project object */;
 }
